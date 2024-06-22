@@ -1,18 +1,18 @@
-pipeline{
+pipeline {
 
-    parameters{
-        booleanParam(name: 'autoApprove', defaultvValue:false, description: 'Automatically run apply after generating plan?')
+    parameters {
+        booleanParam(name: 'autoApprove', defaultValue:false, description: 'Automatically run apply after generating plan?')
     }
-    environments{
+    environments {
         AWS_ACCESS_KEY_ID=credentials("AWS_ACCESS_KEY_ID")
         AWS_SECRET_ACCESS_KEY=credentials("AWS_SECRET_ACCESS_KEY")
     }
 
     agent any
-    stages{
+    stages {
         stage('checkout')
         {
-            steps{
+            steps {
                 scripts{
                     dir("Terraform")
                     {
