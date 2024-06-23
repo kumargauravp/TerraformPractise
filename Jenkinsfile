@@ -13,10 +13,21 @@ pipeline {
         stage('checkout')
         {
             steps {
-                scripts{
+                script{
                     dir("Terraform")
                     {
-                        git "https://github.com/kumargauravp/terraform-jenkins-eks.git"
+                        git "https://github.com/kumargauravp/TerraformPractise.git"
+                    }
+                }
+            }
+        }
+        stage('terraform init')
+        {
+            steps
+            {
+                script{
+                    dir("Terraform"){
+                        sh 'terraform init'
                     }
                 }
             }
