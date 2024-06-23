@@ -10,17 +10,17 @@ pipeline {
 
     agent any
     stages {
-        stage('checkout')
-        {
-            steps {
-                script{
-                    dir("Terraform")
-                    {
-                        git branch: 'main', url:  "https://github.com/kumargauravp/TerraformPractise.git"
-                    }
-                }
-            }
-        }
+        // stage('checkout')
+        // {
+        //     steps {
+        //         script{
+        //             dir("Terraform")
+        //             {
+        //                 git branch: 'main', url:  "https://github.com/kumargauravp/TerraformPractise.git"
+        //             }
+        //         }
+        //     }
+        // }
         stage('terraform init')
         {
             steps
